@@ -12,6 +12,7 @@
     "gatsby-source-datocms": "^2.1.18",
     "gatsby-source-filesystem": "^2.1.29",
     "gatsby-transformer-remark": "^2.6.27",
+    "google-map-react": "^1.1.5",
     "markdown-to-jsx": "^6.10.3",
     "node-sass": "^4.11.0",
     "react": "^16.10.2",
@@ -19,6 +20,7 @@
     "react-helmet": "^5.2.0",
     "react-masonry-component": "^6.2.1",
     "react-slick": "^0.25.2",
+    "rss-parser": "^3.7.3",
     "slick-carousel": "^1.8.1"
   },
   "keywords": [

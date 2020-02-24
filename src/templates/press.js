@@ -1,7 +1,5 @@
 import React from 'react'
-import Slider from 'react-slick'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
-import Img from 'gatsby-image'
 import {graphql, Link} from 'gatsby'
 import Markdown from 'markdown-to-jsx';
 import Layout from "../components/layout"
@@ -32,11 +30,11 @@ export default (({data: {datoCmsArticle: article}}) => (
           })}
         </div>
 
-          { article.video && ( <iframe width="600" height="337,5" src={article.video.url} frameBorder="0" style={{marginTop:'10px', marginBottom:'10px'}}
-                                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                       allowFullScreen></iframe>)
-          }
 
+        { article.video && ( <iframe width="600" height="337,5" src={article.video.url} frameBorder="0" style={{marginTop:'10px', marginBottom:'10px'}}
+                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                     allowFullScreen></iframe>)
+        }
         <ul>{article.links.map((link) => (<li><Link to={"article/" + link.slug}>{link.title}</Link></li>))}</ul>
       </div>
     </article>
@@ -72,8 +70,8 @@ function viewParagraphWithPdf(paragraph) {
 }
 
 export const query = graphql`
-  query ArticleQuery($slug: String!) {
-    datoCmsArticle(slug: {eq: $slug}) {
+  query PressQuery($slug: String!) {
+    datoCmsArticle(slug: {eq: $slug}, articleType: {in: ["press", "interview"]}) {
       id
       articleType
       date
