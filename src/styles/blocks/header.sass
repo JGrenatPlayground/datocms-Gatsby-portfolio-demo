@@ -1,0 +1,78 @@
+.container
+  padding-top: 90px
+
+.header-container
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  background-color: white
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.12)
+
+.header
+  display: flex
+  height: 70px
+  align-items: stretch
+  justify-content: center
+
+  .logo
+    display: flex
+    align-items: center
+    a
+      background-image: url("https://www.keolis.com/sites/all/themes/custom/keolis_theme/logo.png")
+      width: 170px
+      height: 44px
+      background-size: cover
+
+      .linkText
+        opacity: 0
+
+
+  .navbar
+    list-style-type: none
+    display: flex
+    justify-content: center
+    align-items: stretch
+
+    .navbar-item
+      display: flex
+      align-items: center
+      font-size: 14px
+      opacity: 0.8
+
+      &.join-us
+        width: 125px
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        background-color: #005f7d
+        border-radius: 0px 0px 20px 20px
+        font-weight: 900
+        text-align: center
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.12)
+        height: 60px
+        opacity: 1
+        a
+          color: #fff
+
+      a
+        color: #786e64
+        font-weight: 700
+        text-transform: uppercase
+        padding: 0 20px
+        text-decoration: none
+        &:hover
+          color: #005f7d
+
+  .languageSwitcher
+    color: #786e64
+    text-transform: uppercase
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    padding: 0 20px
+    cursor: pointer
+    &:hover
+      color: #005f7d
+    span::after
+      content: '\a0▾'

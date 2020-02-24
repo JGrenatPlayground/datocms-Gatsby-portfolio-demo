@@ -45,52 +45,40 @@ const TemplateWrapper = ({ children }) => (
         favicon={data.datoCmsSite.faviconMetaTags}
         seo={data.datoCmsHome.seoMetaTags}
       />
-      <div className="container__sidebar">
-        <div className="sidebar">
-          <h6 className="sidebar__title">
-            <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
-          </h6>
-          <div
-            className="sidebar__intro"
-            dangerouslySetInnerHTML={{
-              __html: data.datoCmsHome.introTextNode.childMarkdownRemark.html,
-            }}
-          />
-          <ul className="sidebar__menu">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/list">Press & interviews</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-          <p className="sidebar__social">
-            {data.allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
-              <a
-                key={profile.profileType}
-                href={profile.url}
-                target="blank"
-                className={`social social--${profile.profileType.toLowerCase()}`}
-              > </a>
-            ))}
-          </p>
-          <div className="sidebar__copyright">{data.datoCmsHome.copyright}</div>
-        </div>
+      <div className="header-container">
+        <header className="header container-fluid">
+            <h1 className="logo">
+              <Link to="/"><span class="linkText">{data.datoCmsSite.globalSeo.siteName}</span></Link>
+            </h1>
+            <ul className="navbar">
+              <li className="navbar-item">
+                <Link to="/">Notre groupe</Link>
+              </li>
+              <li className="navbar-item">
+                <Link to="/list">Nos engagements</Link>
+              </li>
+              <li className="navbar-item">
+                <Link to="/about">Nos expertises</Link>
+              </li>
+              <li className="navbar-item">
+                <Link to="/about">Notre offre</Link>
+              </li>
+              <li className="navbar-item">
+                <Link to="/about">Candidats</Link>
+              </li>
+              <li className="navbar-item">
+                <Link to="/about">Medias</Link>
+              </li>
+              <li className="navbar-item join-us">
+                <Link to="https://careers.keolis.com/">Rejoignez nous</Link>
+              </li>
+            </ul>
+            <div class="languageSwitcher">
+              <span>FR</span>
+            </div>
+        </header>
       </div>
-      <div className="container__body">
-        <div className="container__mobile-header">
-          <div className="mobile-header">
-            <div className="mobile-header__menu">
-              <Link to="#" data-js="toggleSidebar" />
-            </div>
-            <div className="mobile-header__logo">
-              <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
-            </div>
-          </div>
-        </div>
+      <div className="container-fluid">
         {children}
       </div>
     </div>
