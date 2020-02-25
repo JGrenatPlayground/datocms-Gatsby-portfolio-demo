@@ -45,6 +45,7 @@ const IndexPage = ({ data }) => {
         {data.allDatoCmsArticle.edges.map(({ node: article }) => (
           <div key={article.id} className="showcase__item">
             <figure className="card">
+              <img src={article.heroImage.url} alt={article.heroImage.alt} />
               <figcaption className="card__caption">
                 <h6 className="card__title">
                   <Link to={`/article/${article.slug}`}>{article.title}</Link>
@@ -54,7 +55,10 @@ const IndexPage = ({ data }) => {
           </div>
         ))}
       </Masonry>
-      <div style={{ height: "60vh", width: "90%" }}>
+
+      <img src={data.datoCmsHome.numbers.url} alt={data.datoCmsHome.numbers.alt} style={{marginBottom: "20px"}} />
+
+      <div style={{ height: "60vh", width: "100%" }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyDzONgO_yNGqqf-O47daaWyKexgmN3OsJk" }}
           defaultCenter={center}
@@ -85,6 +89,10 @@ export const query = graphql`
           id
           title
           slug
+          heroImage {
+            url
+            alt
+          }
         }
       }
     }
@@ -105,6 +113,10 @@ export const query = graphql`
         childMarkdownRemark {
           html
         }
+      }
+      numbers {
+        url
+        alt
       }
     }
   }
