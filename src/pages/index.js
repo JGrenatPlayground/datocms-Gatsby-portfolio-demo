@@ -10,6 +10,8 @@ const IndexPage = ({ data }) => {
     lng: 30.33
   };
   const zoom = 11;
+
+  console.log(data)
   return (
     <Layout>
       <h2
@@ -56,7 +58,32 @@ const IndexPage = ({ data }) => {
         ))}
       </Masonry>
 
-      <img src={data.datoCmsHome.numbers.url} alt={data.datoCmsHome.numbers.alt} style={{marginBottom: "20px"}} />
+      {data.datoCmsHome.joinUs.length > 0 && data.datoCmsHome.joinUs[0].display && (
+        <section className="joinUsSection">
+          <h3 className="joinUsSection-title">{data.datoCmsHome.joinUs[0].title}</h3>
+          <div className="joinUsSection-video">
+            <iframe
+              width="900"
+              height="506,28"
+              src={data.datoCmsHome.joinUs[0].video.url}
+              frameBorder="0"
+              style={{margin: "auto"}}
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <a href="{data.datoCmsHome.joinUs[0].link}" className="joinUsSection-link">
+            {data.datoCmsHome.joinUs[0].linkText}
+          </a>
+        </section>
+      )}
+
+
+      <img
+        src={data.datoCmsHome.numbers.url}
+        alt={data.datoCmsHome.numbers.alt}
+        style={{ marginBottom: "20px" }}
+      />
 
       <div style={{ height: "60vh", width: "100%" }}>
         <GoogleMapReact
@@ -66,6 +93,7 @@ const IndexPage = ({ data }) => {
         >
           {data.allDatoCmsMarker.edges.map(({ node: marker }) => (
             <div
+              key={marker.id}
               lat={marker.coordinates.latitude}
               lng={marker.coordinates.longitude}
               style={{ color: "white", textAlign: "center" }}
@@ -112,6 +140,17 @@ export const query = graphql`
       introTextNode {
         childMarkdownRemark {
           html
+        }
+      }
+      joinUs {
+        display
+        title
+        link
+        linkText
+        video {
+          url
+          title
+          thumbnailUrl
         }
       }
       numbers {

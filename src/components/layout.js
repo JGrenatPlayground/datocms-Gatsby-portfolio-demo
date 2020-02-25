@@ -48,7 +48,7 @@ const TemplateWrapper = ({ children }) => (
           <header className="header container-fluid">
             <h1 className="logo">
               <Link to="/">
-                <span class="linkText">
+                <span className="linkText">
                   {data.datoCmsSite.globalSeo.siteName}
                 </span>
               </Link>
@@ -76,7 +76,7 @@ const TemplateWrapper = ({ children }) => (
                 <Link to="https://careers.keolis.com/">Rejoignez nous</Link>
               </li>
             </ul>
-            <div class="languageSwitcher">
+            <div className="languageSwitcher">
               <span>FR</span>
             </div>
           </header>
@@ -426,21 +426,21 @@ const TemplateWrapper = ({ children }) => (
 
           <div className="footer-bottom-container">
             <ul className="container-fluid footer-bottom">
-              <li class="footer-bottom-element">
+              <li className="footer-bottom-element">
                 <a href="https://www.keolis.com/fr/formulaire-contact">Contact</a>
               </li>
-              <li class="footer-bottom-element">
+              <li className="footer-bottom-element">
                 <a href="https://www.keolis.com/fr/mentions-legales">Mentions légales</a>
               </li>
-              <li class="footer-bottom-element">
+              <li className="footer-bottom-element">
                 <a href="https://www.keolis.com/fr/politique-confidentialite">
                   Politique de confidentialité
                 </a>
               </li>
-              <li class="footer-bottom-element">
+              <li className="footer-bottom-element">
                 <a href="https://www.keolis.com/fr/politique-gestion-cookies">Gestion des cookies</a>
               </li>
-              <li class="footer-bottom-element">
+              <li className="footer-bottom-element">
                 <a href="https://www.keolis.com/fr/credits">Crédits</a>
               </li>
             </ul>

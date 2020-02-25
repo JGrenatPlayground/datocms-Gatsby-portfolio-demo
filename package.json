@@ -12,7 +12,7 @@
     "gatsby-source-datocms": "^2.1.18",
     "gatsby-source-filesystem": "^2.1.29",
     "gatsby-transformer-remark": "^2.6.27",
-    "google-map-react": "^1.1.5",
+    "google-map-react": "^1.1.6",
     "markdown-to-jsx": "^6.10.3",
     "node-sass": "^4.11.0",
     "react": "^16.10.2",
