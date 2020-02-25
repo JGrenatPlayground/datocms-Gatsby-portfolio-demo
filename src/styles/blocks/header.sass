@@ -31,6 +31,39 @@ em
       .linkText
         opacity: 0
 
+  .mobile-menu
+    display: none
+    position: relative
+
+    button
+      font-size: 2.7rem
+      border: none
+      padding: 0
+      background-color: transparent
+
+      &:focus + .menu-elements
+        right: -20px
+
+    .menu-elements
+      position: absolute
+      top: calc(100% + 1px)
+      right: -460px
+      width: 60vw
+      padding: 10px 0
+      background-color: white
+      box-shadow: -2px 0 8px rgba(0, 0, 0, 0.12)
+      list-style-type: none
+      transition: right 100ms
+
+      .menu-elements-item a
+        display: block
+        text-transform: uppercase
+        font-size: 1.2em
+        text-decoration: none
+        padding: 8px 15px
+        color: #786e64
+        &:hover
+          color: #005f7d
 
   .navbar
     list-style-type: none
@@ -90,7 +123,10 @@ em
 
   .footer-top-container
     background-color: #005f7d
-    font-size: 1.4rem
+    font-size: 1.15rem
+
+    @media only screen and (max-width: 768px)
+      font-size: 0.8rem
 
     .footer-top
       display: flex
@@ -99,12 +135,15 @@ em
 
       li
         text-transform: uppercase
+        font-family: Museo, Arial, sans-serif
+        font-weight: 700
         text-align: center
         flex: 1
-        padding: 20px 50px
-
         a
+          display: inline-block
           padding: 20px 50px
+          @media only screen and (max-width: 768px)
+            padding: 15px 5px
 
 
   .navbar-nav
@@ -112,12 +151,16 @@ em
     margin: 30px 0 20px
     justify-content: space-between
 
+    @media only screen and (max-width: 768px)
+      display: none
+
     .first-level > a
       text-transform: uppercase
       margin-bottom: 10px
       display: block
-      font-size: 1rem
-      font-weight: bold
+      font-size: 0.9rem
+      font-weight: 700
+      font-family: Museo, Arial, sans-serif
 
     .second-level
       font-size: 0.8rem
@@ -130,17 +173,23 @@ em
     display: flex
     justify-content: center
     align-items: center
+    @media only screen and (max-width: 768px)
+      flex-direction: column
 
     .footer-bottom-element, a
       padding: 20px 15px
       text-transform: uppercase
       font-size: 0.9rem
+      @media only screen and (max-width: 768px)
+        padding: 0 15px
 
   .first-level-link
     text-transform: uppercase
     color: white
-    font-size: 1rem
-    font-weight: bold
+    font-size: 0.9rem
+    font-weight: 700
+    font-family: Museo, Arial, sans-serif
+
 
   a
     color: white
@@ -151,3 +200,23 @@ em
   hr
     border: none
     border-bottom: 2px solid #6a635c
+    @media only screen and (max-width: 768px)
+      display: none
+
+
+@media only screen and (max-width: 768px)
+  .container
+    overflow-x: hidden
+  .header-container
+    .header
+      justify-content: space-between
+
+      .navbar, .languageSwitcher
+        display: none !important
+      .mobile-menu
+        display: flex
+        justify-content: center
+        align-items: center
+
+  .introText p
+    font-size: 0.5em

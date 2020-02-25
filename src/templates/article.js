@@ -6,7 +6,7 @@ import Layout from "../components/layout";
 
 export default ({ data: { datoCmsArticle: article } }) => (
   <Layout>
-    <div className="container-fluid sheet">
+    <div className="sheet">
       <HelmetDatoCms seo={(<data className="article"></data>).seoMetaTags} />
       <article className="article">
         <header

@@ -11,7 +11,6 @@ const IndexPage = ({ data }) => {
   };
   const zoom = 11;
 
-  console.log(data)
   return (
     <Layout>
       <h2
@@ -63,8 +62,6 @@ const IndexPage = ({ data }) => {
           <h3 className="joinUsSection-title">{data.datoCmsHome.joinUs[0].title}</h3>
           <div className="joinUsSection-video">
             <iframe
-              width="900"
-              height="506,28"
               src={data.datoCmsHome.joinUs[0].video.url}
               frameBorder="0"
               style={{margin: "auto"}}
@@ -87,7 +84,7 @@ const IndexPage = ({ data }) => {
 
       <div style={{ height: "60vh", width: "100%" }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyDzONgO_yNGqqf-O47daaWyKexgmN3OsJk" }}
+          bootstrapURLKeys={{ key: "AIzaSyAVs-wn-tKSyyz-1-D8dTBkUhFrWKBOLvs" }}
           defaultCenter={center}
           defaultZoom={zoom}
         >
